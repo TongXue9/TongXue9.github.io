@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tong Xue | Electrical Engineering Portfolio</title>
+    <meta
+      name="description"
+      content="Tong Xue is an Electrical Engineering student at the University of Toronto focused on analog / mixed-signal IC design, RF systems and power electronics."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <canvas id="signal-canvas" aria-hidden="true"></canvas>
 
+    <header class="site-header" data-reveal>
+      <a class="brand" href="#top" aria-label="Tong Xue home">
+        <span class="brand-mark">TX</span>
+        <span>Tong Xue</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img class="hero-image" src="assets/hero-circuit.png" alt="" />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-content" data-reveal>
+          <p class="eyebrow">Electrical Engineering · Analog/Mixed-Signal · RF · Power Electronics</p>
+          <h1>Designing the future, one circuit at a time.</h1>
+          <p class="hero-copy">
+            I'm Tong Xue, a second-year Electrical Engineering student at the University of Toronto
+            focused on analog and mixed-signal IC design, RF systems, power
+            electronics, and hands-on validation from schematic to lab bench.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View projects</a>
+            <a class="button ghost" href="mailto:tong.xue@mail.utoronto.ca">Get in touch</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Profile highlights" data-reveal>
+          <div>
+            <span class="metric">Dean's Honour List</span>
+            <span class="label">Academic Performance</span>
+          </div>
+          <div>
+            <span class="metric">$48K</span>
+            <span class="label">U of T Engineering International Scholar Award</span>
+          </div>
+          <div>
+            <span class="metric">NXP & OmniVision</span>
+            <span class="label">Internships</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro section-band" data-reveal>
+        <div class="section-kicker">Signal Path</div>
+        <div class="intro-copy">
+          <h2>Bridging circuit design and silicon validation.</h2>
+          <p>
+            Focused on how analog and RF systems behave in the real world through PCB prototyping, EMC testing, and hardware debugging, while developing intuition in analog/mixed-signal IC design.
+          </p>
+        </div>
+      </section>
+
+      <section class="timeline-section" id="work">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Experience</p>
+          <h2>Chip Validation, Hardware Debugging, PCB Design, EMC Mitigation.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item" data-reveal>
+            <div class="timeline-date">Jul 2026 - Aug 2026</div>
+            <div class="timeline-card featured">
+              <div class="card-topline">
+                <span>NXP Semiconductors</span>
+                <span>Tianjin, China</span>
+              </div>
+              <h3>Engineer</h3>
+              <p>
+                Upcoming engineering experience in semiconductor hardware, expanding
+                my work across validation, device-level thinking, and production-aware
+                engineering practice.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-reveal>
+            <div class="timeline-date">May 2026 - Jun 2026</div>
+            <div class="timeline-card">
+              <div class="card-topline">
+                <span>OmniVision</span>
+                <span>Tianjin, China</span>
+              </div>
+              <h3>Hardware Validation Engineer Intern</h3>
+              <ul class="sharp-list">
+                <li>Supported IC-level and system-level validation of automotive semiconductor devices, analyzing signal integrity and EMC brhavior across chip, PCB and system environments.</li>
+                <li>Executed EMC validation including radiated and conducted emissions (RE/CE), immunity testing (DPI/BCI), and automotive transient stress tests (ESD / transient pulse / load dump / supply-voltage variation), characterizing failure mechanisms under real operating conditions.</li>
+                <li>Investigated IC and system-level failures such as unstable current draw, overheating, MOSFET failure, SPI wiring errors, solder defects, RF crosstalk, spectral peaks by combining electrical probing, register-level debugging, and physical rework.</li>
+                <li>Contributed to schematic and PCB modifications using Altium Designer to improve EMC robustness and signal integrity in high-current and high-frequency paths.</li>
+                <li>Utilized EMI receivers, spectrum analyzers, GTEM cells, RF probes, multimeter and oscilloscopes to analyze frequency-domain behavior and validate mitigation strategies.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Selected Projects</p>
+          <h2>Compact builds with real engineering texture.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card large" data-reveal>
+            <div class="project-index">01</div>
+            <h3>Analog IC Building Blocks in CMOS (SPICE-Based Design and Simulation)</h3>
+            <p>
+              <p>Designed and analyzed fundamental analog CMOS building blocks using SPICE-based circuit simulation, focusing on transistor-level behavior and core principles of analog IC design.</p>
+              <p>The project aims to build intuition for how analog integrated circuits operate at the device level, emphasizing the relationship between circuit topology and key performance metrics such as gain, bandwidth, linearity, and output impedance.</p>
+              <p>Core modules include current mirrors, differential pairs, and a basic two-stage operational amplifier. Each block is evaluated through DC, transient, and AC analysis to understand trade-offs in analog circuit design.</p>
+            </p>
+            <div class="chip-row">
+              <span>CMOS Analog IC Design</span>
+              <span>SPICE-Based Simulation</span>
+              <span>Transistor-Level Circuit Modeling</span>
+              <span>DC/AC/Transient Analysis</span>
+              <span>Small-Signal & Noise Analysis</span>
+              <span>LTspice</span>
+
+            </div>
+          </article>
+          <article class="project-card" data-reveal>
+            <div class="project-index">02</div>
+            <h3>Digital Systems Design (ECE241 FPGA Lab Project)</h3>
+            <p>
+              ECE241 laboratory project focusing on digital system design and FPGA-based implementation, including sequential logic, finite state machines, and hardware description language (HDL) development.
+
+              (Project details to be expanded upon course completion.)
+            </p>
+            <div class="chip-row">
+              <span>FPGA</span>
+              <span>Verilog</span>
+              <span>Digital Systems</span>
+            </div>
+          </article>
+          <article class="project-card" data-reveal>
+            <div class="project-index">03</div>
+            <h3>PCB Design</h3>
+            <p>
+              Created schematics and PCB routing exercises in Altium Designer,
+              focusing on layout clarity, bring-up readiness, and manufacturable
+              board habits.
+            </p>
+            <div class="chip-row">
+              <span>Altium Designer</span>
+              <span>PCB Layout</span>
+              <span>Schematic</span>
+              <span>Power Integrity</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Technical Stack</p>
+          <h2>Tools for designing, measuring, and fixing hardware.</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-panel" data-reveal>
+            <h3>Programming</h3>
+            <p>Verilog, C, C++, MATLAB, Python, LaTeX</p>
+            <p>Web Development (HTML5, CSS3, JavaScript, CSS Grid, Flexbox, DOM Manipulation)</p>
+          </article>
+          <article class="skill-panel" data-reveal>
+            <h3>EDA & Engineering Tools</h3>
+            <p>Altium Designer, Cadence Virtuoso, LTspice, EMC32, Arduino, VS Code, PyCharm</p>
+          </article>
+          <article class="skill-panel" data-reveal>
+            <h3>Lab Equipment</h3>
+            <p>Oscilloscopes, EMI receiver, spectrum analyzer, signal generator, RF power amplifier, LISN, GTEM cell, source meter, ESD gun, load dump simulator</p>
+          </article>
+          <article class="skill-panel" data-reveal>
+            <h3>Electrical Engineering Skills</h3>
+            <p>PCB design, Soldering & Rework, Circuit Design & Testing, EMC & Hardware Debugging, System Bring-up, Fault Isolation</p>
+          </article>
+          
+        </div>
+      </section>
+
+      <section class="education section-band">
+        <div class="education-copy" data-reveal>
+          <p class="eyebrow">Education</p>
+          <h2>University of Toronto</h2>
+          <p>
+            <li>Bachelor of Applied Science in Electrical Engineering</li>
+            <li>U of T Engineering International Scholar Award ($48K)</li>
+                
+          </p>
+        </div>
+
+        <div class="education-right">
+         <p class="section-kicker">Relevant Coursework (ECE & Math)</p>
+         <div class="course-wall" aria-label="Courses" data-reveal>
+          <span>ECE110</span>
+          <span>ECE231</span>
+          <span>ECE241</span>
+          <span>ECE244</span>
+          <span>MAT186</span>
+          <span>MAT187</span>
+          <span>MAT188</span>
+          <span>MAT290</span>
+          <span>MAT291</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" data-reveal>
+        <p class="eyebrow">Contact</p>
+        <h2>Please do not hesitate to contact me if you have any question.</h2>
+        <div class="contact-links">
+          <a href="mailto:tong.xue@mail.utoronto.ca">tong.xue@mail.utoronto.ca</a>
+          <a href="tel:+16479625811">+1 647 962 5811</a>
+          <a href="https://linkedin.com/in/tong-x" target="_blank" rel="noreferrer">linkedin.com/in/tong-x</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Tong Xue</span>
+      <span>Electrical Engineering Portfolio</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
