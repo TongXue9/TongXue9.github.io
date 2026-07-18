@@ -327,38 +327,43 @@ section {
 }
 .interest-strip {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 26px;
-  padding-top: 54px;
-  padding-bottom: 54px;
+  gap: 24px;
+  padding-top: 58px;
+  padding-bottom: 58px;
 }
 
 .interest-strip .section-kicker {
   margin: 0;
-  color: var(--muted);
+  color: var(--amber);
   font-size: 0.88rem;
 }
 
 .interest-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .interest-list span {
-  padding: 8px 24px;
-  border-left: 1px solid var(--line);
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.045);
   color: #dcebe7;
   font-weight: 800;
-  font-size: clamp(1rem, 1.55vw, 1.28rem);
+  font-size: 1rem;
+  line-height: 1.25;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.interest-list span:first-child {
-  border-left: 0;
-  padding-left: 0;
+.interest-list span:hover {
+  transform: translateY(-3px);
+  border-color: rgba(84, 230, 211, 0.65);
+  background: rgba(84, 230, 211, 0.08);
 }
-
 .intro-copy {
   max-width: 980px;
 }
@@ -673,19 +678,15 @@ section {
 
 @media (max-width: 760px) {
   .interest-list {
-    gap: 10px;
+    grid-template-columns: 1fr;
   }
 
   .interest-list span {
-    border-left: 0;
-    padding: 8px 12px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.04);
-    font-size: 0.9rem;
+    min-height: auto;
+    padding: 14px 15px;
+    font-size: 0.95rem;
   }
-
-  .site-header {
+.site-header {
     position: absolute;
     align-items: flex-start;
   }
@@ -755,3 +756,13 @@ section {
 
 
 
+
+.project-card,
+.interest-list span {
+  will-change: transform;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(84, 230, 211, 0.46);
+}
