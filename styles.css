@@ -325,6 +325,39 @@ section {
   color: var(--amber);
   font-weight: 800;
 }
+.interest-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+
+.interest-strip .section-kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+.interest-list span {
+  padding: 8px 24px;
+  border-left: 1px solid var(--line);
+  color: #dcebe7;
+  font-weight: 800;
+  font-size: clamp(1rem, 1.55vw, 1.28rem);
+}
+
+.interest-list span:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
 
 .intro-copy {
   max-width: 980px;
@@ -449,8 +482,8 @@ section {
 
 .project-card {
   position: relative;
-  min-height: 360px;
-  padding: 28px;
+  min-height: auto;
+  padding: 26px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -468,8 +501,9 @@ section {
 }
 
 .project-card.large {
-  grid-row: span 2;
-  min-height: 640px;
+  grid-column: span 2;
+  grid-row: auto;
+  min-height: auto;
   background:
     linear-gradient(145deg, rgba(84, 230, 211, 0.14), transparent 52%),
     rgba(255, 255, 255, 0.04);
@@ -482,8 +516,8 @@ section {
 }
 
 .project-card h3 {
-  max-width: 620px;
-  margin-top: 34px;
+  max-width: 720px;
+  margin-top: 24px;
 }
 
 .project-card p {
@@ -501,7 +535,8 @@ section {
 .chip-row {
   position: relative;
   z-index: 1;
-  margin-top: auto;
+  margin-top: 16px;
+  align-items: flex-start;
 }
 
 .chip-row span,
@@ -516,7 +551,11 @@ section {
 }
 
 .chip-row span {
-  padding: 7px 10px;
+  max-width: 100%;
+  padding: 6px 9px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .skills-grid {
@@ -633,6 +672,19 @@ section {
 }
 
 @media (max-width: 760px) {
+  .interest-list {
+    gap: 10px;
+  }
+
+  .interest-list span {
+    border-left: 0;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.9rem;
+  }
+
   .site-header {
     position: absolute;
     align-items: flex-start;
@@ -664,6 +716,7 @@ section {
   .project-card,
   .project-card.large {
     min-height: auto;
+    grid-column: span 1;
   }
 
   .project-card h3 {
@@ -693,6 +746,7 @@ section {
     animation-duration: 0.01ms !important;
   }
 }
+
 
 
 
