@@ -3,271 +3,410 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tong Xue | Engineering Portfolio</title>
+    <title>Tong Xue · Electrical Engineering</title>
     <meta
       name="description"
-      content="Tong Xue is an Electrical Engineering student at the University of Toronto with experience in robotics, edge AI deployment, automotive EMC validation, PCB bring-up, and hardware debugging."
+      content="Tong Xue — Electrical Engineering at the University of Toronto, focused on analog/mixed-signal circuits, IC-level EMC validation, and silicon systems."
     />
+    <meta property="og:title" content="Tong Xue · Electrical Engineering" />
+    <meta property="og:description" content="Analog/mixed-signal circuits, IC-level EMC validation, and silicon systems." />
+    <meta property="og:image" content="assets/portrait.jpg" />
+    <meta name="theme-color" content="#07090d" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+    <div class="progress" aria-hidden="true"><span></span></div>
 
-    <header class="site-header" data-reveal>
+    <header class="nav">
       <a class="brand" href="#top" aria-label="Tong Xue home">
-        <span class="brand-mark">TX</span>
-        <span>Tong Xue</span>
+        <span class="brand-chip"><i></i><i></i><i></i><i></i>TX</span>
+        <span class="brand-name">Tong Xue</span>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://linkedin.com/in/tong-x" target="_blank" rel="noopener">LinkedIn ↗</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-content" data-reveal>
-          <p class="eyebrow">Electrical Engineering · University of Toronto (2T9)
-          </p>
-          <img class="hero-portrait" src="Weixin Image_20260630140525_36_31.jpg" alt="Portrait of Tong Xue" />
-          <p class="hero-copy">
-            I'm Tong Xue, a second-year Electrical Engineering student at the University of Toronto focused on analog and mixed-signal IC design, RF systems, power electronics, and robotics.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#work">Experience</a>
-            <a class="button ghost" href="mailto:tong.xue@mail.utoronto.ca">Contact</a>
+      <!-- HERO -->
+      <section class="hero">
+        <canvas id="scope" aria-hidden="true"></canvas>
+        <div class="hero-vignette" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <div class="hero-text">
+            <h1 class="hero-name">Tong <span class="grad">Xue</span></h1>
+            <p class="hero-role mono">
+              <span class="role-prefix">&gt;</span>
+              <span class="role-rotator" data-roles='["MPU Systems Intern @ NXP","EMC & Hardware Validation Intern @ OmniVision","Electrical Engineering @ UofT"]'>MPU Systems Intern @ NXP</span>
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary magnetic" href="#work"><span>See the work</span></a>
+              <a class="btn btn-ghost magnetic" href="#contact"><span>Get in touch</span></a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="package tilt">
+              <div class="pins pins-top"></div>
+              <div class="pins pins-bottom"></div>
+              <div class="pins pins-left"></div>
+              <div class="pins pins-right"></div>
+              <div class="die">
+                <img src="assets/portrait.jpg" alt="Portrait of Tong Xue" width="1444" height="1444" />
+                <span class="die-mark" aria-hidden="true"></span>
+              </div>
+            </div>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Profile highlights" data-reveal>
-          <div>
-            <span class="metric">Dean's Honour List</span>
-            <span class="label">Academic Performance</span>
-          </div>
-          <div>
-            <span class="metric">$48K</span>
-            <span class="label">U of T Engineering International Scholar Award</span>
-          </div>
-          <div>
-            <span class="metric">NXP & OmniVision</span>
-            <span class="label">Internships</span>
-          </div>
-        </aside>
+
+        <a class="scroll-cue mono" href="#about" aria-label="Scroll to about">scroll<span></span></a>
       </section>
 
-      <section class="interest-strip section-band" data-reveal>
-        <p class="section-kicker">Technical Interests</p>
-        <div class="interest-list" aria-label="Technical interests">
-          <span>Analog/Mixed-Signal IC</span>
-          <span>RF</span>
-          <span>Power Electronics</span>
-          <span>Robotics & Edge AI</span>
-          <span>Digital IC</span>
-          <span>PCB</span>
+      <!-- STATS -->
+      <section class="stats" aria-label="Highlights">
+        <div class="stat reveal"><b data-count="2">0</b><span>Semiconductor internships</span></div>
+        <div class="stat reveal"><b class="stat-text">Dean's List</b><span>University of Toronto Engineering</span></div>
+        <div class="stat reveal"><b data-count="48" data-prefix="$" data-suffix="K">0</b><span>Engineering International Scholar Award</span></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="section-head reveal">
+          <p class="kicker mono">01 / About</p>
+          <h2>Hardware that has to work<br /><span class="muted">in the real world.</span></h2>
+        </div>
+        <div class="about-copy reveal">
+          <p>
+            I'm a second-year <strong>Electrical Engineering</strong> student at the University of Toronto (2T9 + PEY), interested in
+            analog/mixed-signal IC design, RF and high-speed circuits, and power electronics.
+          </p>
+          <p>
+            At <strong>OmniVision</strong> I worked on IC- and system-level EMC for automotive driver ICs and radar modules, tracing
+            emission peaks and immunity failures back to clocks, coupling paths, and decoupling networks. At <strong>NXP</strong> I joined
+            the MPU team and worked on a robot platform built around the i.MX&nbsp;95, from on-chip peripherals and NPU inference to
+            real-time control and servo characterization.
+          </p>
         </div>
       </section>
 
-      <section class="timeline-section" id="work">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Experience</p>
-          <h2>Internship work</h2>
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="section-head reveal">
+          <p class="kicker mono">02 / Experience</p>
+          <h2>Where I've worked</h2>
         </div>
 
         <div class="timeline">
-          <article class="timeline-item" data-reveal>
-            <div class="timeline-date">Jul 2026 - Aug 2026</div>
-            <div class="timeline-card featured">
-              <div class="card-topline">
-                <span>NXP Semiconductors</span>
-                <span>Tianjin, China</span>
-              </div>
-              <h3>MPU Systems Engineer Intern - Robotics & Edge AI</h3>
-              <ul class="sharp-list">
-                <li>Developing robotics and edge AI systems involving teleoperation, data collection, and imitation and reinforcement learning.</li>
-                <li>Integrating robot control, simulation, and motion-planning components.</li>
-                <li>Supporting embedded model deployment for edge AI platforms.</li>
+          <article class="xp reveal" style="--c: var(--teal)">
+            <div class="xp-rail"><span class="xp-node"></span></div>
+            <div class="xp-card glow-card">
+              <header class="xp-head">
+                <div>
+                  <p class="xp-co">NXP Semiconductors</p>
+                  <h3>MPU Systems Intern</h3>
+                  <p class="xp-meta mono">MPU Team · Tianjin, China</p>
+                </div>
+                <span class="xp-date mono">Jul — Aug 2026</span>
+              </header>
+              <p class="xp-lede">
+                Brought up and characterized a robot platform built around the <b>NXP i.MX&nbsp;95</b> applications processor, from
+                on-chip peripherals and camera pipelines to NPU inference.
+              </p>
+              <ul class="xp-list">
+                <li>Brought up a <b>multi-peripheral data-acquisition platform</b> on the i.MX&nbsp;95: dual USB-UART links, on-chip LPUART, and dual V4L2 cameras at 30&nbsp;FPS. Fixed camera dropouts and recording interruptions (H.264 → AV1).</li>
+                <li>Analyzed on-device inference on the <b>Cortex-A55 cluster and Kinara Ara-2 NPU</b> (ONNX → INT8 → DVM). NPU offload reached ~20&nbsp;ms at ~23&nbsp;FPS with 35% lower CPU load.</li>
+                <li>Trained an <b>ACT policy</b> on the collected data and validated it on the real robot, selecting a 30-step action execution horizon for stable grasps.</li>
+                <li>Built control paths for the RoArm M3 with ROS&nbsp;2 / MoveIt&nbsp;2 (motion planning and 50&nbsp;Hz Servo): 100&nbsp;Hz DDS commands to a MuJoCo model in simulation, and a feedback-gated UART link to the ESP32 servo controller on the real arm. Added joint limits, floor-height protection, IK-failure handling, feedback validation, and communication watchdogs. Measured gravity-induced steady-state tracking error (<b>~4.8° shoulder, ~3.1° elbow</b>) and evaluated direction-dependent compensation.</li>
               </ul>
+              <div class="chips"><span>NXP i.MX 95</span><span>Arm Cortex-A55</span><span>Kinara Ara-2 NPU</span><span>Linux · udev</span><span>LPUART / USB-UART</span><span>V4L2 / UVC</span><span>H.264 / AV1</span><span>ONNX</span><span>INT8 Quantization</span><span>PyTorch</span><span>ACT · LeRobot</span><span>ROS 2</span><span>MoveIt 2</span><span>DDS</span><span>MuJoCo</span><span>FK / IK</span><span>ESP32</span></div>
             </div>
           </article>
 
-          <article class="timeline-item" data-reveal>
-            <div class="timeline-date">May 2026 - Jun 2026</div>
-            <div class="timeline-card">
-              <div class="card-topline">
-                <span>OmniVision</span>
-                <span>Tianjin, China</span>
-              </div>
-              <h3>Hardware Validation Engineer Intern - EMC & PCB</h3>
-              <ul class="sharp-list">
-                <li>Performed IC- and system-level EMC validation for automotive semiconductor devices.</li>
-                <li>Worked across emissions and immunity testing, PCB bring-up, and hardware debugging.</li>
-                <li>Contributed to schematic and PCB layout design and implemented EMC mitigation techniques.</li>
+          <article class="xp reveal" style="--c: var(--amber)">
+            <div class="xp-rail"><span class="xp-node"></span></div>
+            <div class="xp-card glow-card">
+              <header class="xp-head">
+                <div>
+                  <p class="xp-co">OmniVision Technologies</p>
+                  <h3>EMC &amp; Hardware Validation Intern</h3>
+                  <p class="xp-meta mono">EMC Team · Tianjin, China</p>
+                </div>
+                <span class="xp-date mono">May — Jun 2026</span>
+              </header>
+              <p class="xp-lede">
+                IC- and system-level electromagnetic compatibility validation for automotive driver ICs and radar modules.
+              </p>
+              <ul class="xp-list">
+                <li>Quantified how <b>spread-spectrum clocking</b> reshapes radiated emissions (RE), and traced conducted-emission (CE) peaks measured with the 150&nbsp;Ω direct-coupling method to <b>15&nbsp;MHz internal-clock harmonics</b>.</li>
+                <li>Mapped <b>DPI immunity</b> thresholds up to 400&nbsp;MHz; at system level, diagnosed harness-dependent <b>common-mode emissions</b> and verified robustness under BCI, ISO&nbsp;7637 transients, and load dump.</li>
+                <li>Traced a <b>gate-driver fault</b> to <b>RF crosstalk</b> using multi-channel scope captures and MCU register decoding, and evaluated decoupling-network modifications to mitigate the failure (<a href="#emc">see below</a>).</li>
+                <li>Modified schematics and PCB layouts in <b>Altium Designer</b>; performed PCB bring-up, fine-pitch rework, and conducted-emission mitigation.</li>
               </ul>
+              <div class="chips"><span>EMC / EMI</span><span>Conducted &amp; Radiated Emissions</span><span>Direct Power Injection</span><span>Bulk Current Injection</span><span>ESD</span><span>ISO 7637 Transients</span><span>Spread-Spectrum Clocking</span><span>Common-Mode Noise</span><span>Decoupling &amp; Filtering</span><span>Gate Drivers</span><span>Register-Level Debug</span><span>SPI · CAN · LIN</span><span>Altium Designer</span><span>PCB Bring-Up &amp; Rework</span></div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="projects" id="projects">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Projects</p>
-          <h2>Selected technical work</h2>
+      <!-- WORK -->
+      <section class="section" id="work">
+        <div class="section-head reveal">
+          <p class="kicker mono">03 / Selected Work</p>
+          <h2>Case studies</h2>
         </div>
-        <div class="project-grid">
-          <article class="project-card large" data-reveal>
-            <div class="project-index">01</div>
-            <h3>RoArm M3 Imitation Learning and Edge AI Deployment</h3>
-            <div class="project-copy">
-              <p>Built an end-to-end robotics learning pipeline for a mobile manipulator, from teleoperation data collection to LeRobot dataset generation and ACT policy training.</p>
-              <p>Converted and deployed trained policies to an NXP i.MX 95-based edge platform with Kinara Ara-2 acceleration, comparing FP32, INT8, and DVM deployment paths.</p>
-              <p>Benchmarked deployed inference behavior, reaching approximately 20 ms model-inference latency and 22 FPS end-to-end throughput under the tested configuration.</p>
-            </div>
-            <div class="chip-row">
-              <span>LeRobot</span>
-              <span>ACT</span>
-              <span>PyTorch</span>
-              <span>ONNX</span>
-              <span>INT8 Quantization</span>
-              <span>i.MX 95</span>
-              <span>Kinara Ara-2</span>
-            </div>
-          </article>
 
-          <article class="project-card" data-reveal>
-            <div class="project-index">02</div>
-            <h3>ROS 2, MoveIt 2, RViz and MuJoCo Robot Control</h3>
-            <p>
-              Connected RViz motion planning to MuJoCo execution through a custom FollowJointTrajectory action server, translating six-joint trajectories into Unitree LowCmd motor commands over DDS at 100 Hz with interpolation, limits, PD control, CRC generation, and joint-state feedback.
-            </p>
-            <div class="chip-row">
-              <span>ROS 2</span>
-              <span>MoveIt 2</span>
-              <span>RViz</span>
-              <span>MuJoCo</span>
-              <span>DDS</span>
+        <!-- 01 EMC -->
+        <article class="case reveal" id="emc" style="--c: var(--amber)">
+          <div class="case-head">
+            <span class="case-num mono">01</span>
+            <div>
+              <h3>Hunting a gate-driver fault during DPI</h3>
+              <p class="case-sub mono">OmniVision · Direct Power Injection · 150 kHz–400 MHz</p>
             </div>
-          </article>
+          </div>
+          <div class="emc-grid">
+            <div class="case-copy">
+              <p>
+                During DPI on a high-side output, the device withstood less and less injected power at higher frequencies. The
+                output itself looked clean, but the MCU's fault line dropped.
+              </p>
+              <p>
+                Decoding the status registers against the datasheet pointed at the <b>gate driver</b>. A third scope channel
+                confirmed it: instead of an 80% duty PWM, GD sat flat at 12&nbsp;V. The series inductor in the decoupling network
+                blocked RF from the load side, so the noise coupled into the IC.
+              </p>
+              <p>
+                <b>Fix:</b> move the 2&nbsp;×&nbsp;22&nbsp;nF capacitors between the injection point and the IC so they shunt the
+                RF away. The device passed the subsequent re-test.
+              </p>
+              <div class="toggle mono" role="tablist" aria-label="Scope state">
+                <button role="tab" aria-selected="true" data-state="fault">Before fix</button>
+                <button role="tab" aria-selected="false" data-state="fixed">After fix</button>
+              </div>
+            </div>
+            <figure class="scope-fig">
+              <div class="scope-screen">
+                <canvas id="emc-scope" aria-label="Oscilloscope traces of OUT7, FAULT and gate-driver channels"></canvas>
+                <div class="scope-legend mono">
+                  <span class="ch1">CH1 OUT7</span>
+                  <span class="ch2">CH2 FAULT</span>
+                  <span class="ch3">CH3 GD</span>
+                </div>
+                <div class="scope-status mono"><span class="state-label">FAULT · GD stuck high</span></div>
+              </div>
+              <figcaption class="mono">Re-creation of the debug captures, not raw lab data.</figcaption>
+            </figure>
+          </div>
+        </article>
 
-          <article class="project-card" data-reveal>
-            <div class="project-index">03</div>
-            <h3>Automotive EMC Validation and PCB Debugging</h3>
-            <p>
-              Characterized IC-level and system-level EMC behavior across emissions, immunity, ESD, load dump, and supply-variation tests, then traced failures through waveforms, registers, PCB inspection, and iterative mitigation experiments.
-            </p>
-            <div class="chip-row">
-              <span>EMC</span>
-              <span>PCB design & Bring-Up</span>
-              <span>Altium Designer</span>
-              <span>Hardware Debugging</span>
-              <span>Automotive Electronics</span>
+        <!-- 02 ACT -->
+        <article class="case reveal" style="--c: var(--teal)">
+          <div class="case-head">
+            <span class="case-num mono">02</span>
+            <div>
+              <h3>From human demos to an NPU: imitation learning on the edge</h3>
+              <p class="case-sub mono">NXP · ACT · LeRobot · ONNX · i.MX 95 + Kinara Ara-2</p>
             </div>
-          </article>
+          </div>
+          <p class="case-copy">
+            A leader arm teleoperates a follower mounted on a mobile base while wrist and global cameras record synchronized
+            observations. An Action Chunking Transformer learns to predict short <em>chunks</em> of future joint commands.
+            The policy is then exported to ONNX, quantized to INT8, and compiled for the Ara-2 NPU next to the i.MX&nbsp;95,
+            where I analyzed its board-side latency and CPU profile.
+          </p>
 
-          <article class="project-card" data-reveal>
-            <div class="project-index">04</div>
-            <h3>Analog CMOS Building Blocks in SPICE</h3>
-            <p>
-              Designed and analyzed current mirrors, differential pairs, and a two-stage operational amplifier in SPICE to study transistor-level behavior, gain, bandwidth, output impedance, and analog design trade-offs.
-            </p>
-            <div class="chip-row">
-              <span>CMOS</span>
-              <span>LTspice</span>
-              <span>DC Analysis</span>
-              <span>AC Analysis</span>
-              <span>Transient Analysis</span>
+          <div class="flow" aria-label="Pipeline">
+            <div class="flow-node"><b>Teleop</b><span>leader → follower</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node"><b>Dataset</b><span>2 cams + 6-DoF state</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node"><b>Train</b><span>ACT · PyTorch</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node"><b>Export</b><span>ONNX → INT8</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node flow-hot"><b>Edge NPU</b><span>Ara-2 DVM · i.MX 95</span></div>
+          </div>
+
+          <div class="case-grid">
+            <div class="horizon">
+              <p class="kicker mono">action-horizon sweep · real robot</p>
+              <div class="horizon-row">
+                <div class="h-cell h-mid"><b>1</b><span>jitter</span></div>
+                <div class="h-cell h-bad"><b>10</b><span>miss</span></div>
+                <div class="h-cell h-mid"><b>20</b><span>jitter</span></div>
+                <div class="h-cell h-good"><b>30</b><span>grasp ✓</span></div>
+                <div class="h-cell h-bad"><b>40</b><span>miss</span></div>
+                <div class="h-cell h-bad"><b>50</b><span>miss</span></div>
+              </div>
+              <p class="note">Too short a chunk and the arm stutters. Too long and it can't react. 30 steps worked best.</p>
             </div>
+            <div class="metrics">
+              <div class="metric"><b>~20 ms</b><span>policy inference on NPU (DVM)</span></div>
+              <div class="metric"><b>~23 FPS</b><span>end-to-end control loop on board</span></div>
+              <div class="metric"><b>150</b><span>teleop demo episodes</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 CONTROL -->
+        <article class="case reveal" style="--c: var(--blue)">
+          <div class="case-head">
+            <span class="case-num mono">03</span>
+            <div>
+              <h3>Three control paths, one RoArm M3</h3>
+              <p class="case-sub mono">NXP · ROS 2 Humble · MoveIt 2 · MuJoCo (Unitree SDK DDS) · ESP32 UART</p>
+            </div>
+          </div>
+          <p class="case-copy">
+            Each path tests a different layer. Planning checks the high-level stack. Servo checks real-time
+            Jacobian control. Direct DDS skips MoveIt and checks IK, joint mapping, and actuation. In simulation, all three
+            end in the same CRC-protected <span class="mono">LowCmd</span> packet, streamed over DDS to a MuJoCo model of the
+            arm. On the real arm, the same ROS driver switches to a JSON-over-UART backend for the ESP32 servo controller,
+            and it only sends commands once valid joint feedback has arrived.
+          </p>
+
+          <div class="paths">
+            <div class="path">
+              <span class="path-tag mono">PLAN</span>
+              <div class="path-steps"><span>RViz goal pose</span><i></i><span>KDL IK + OMPL</span><i></i><span>FollowJointTrajectory</span></div>
+              <span class="path-hz mono">100 Hz interp</span>
+            </div>
+            <div class="path">
+              <span class="path-tag mono">SERVO</span>
+              <div class="path-steps"><span>TwistStamped</span><i></i><span>q̇ = J⁺(q)·ẋ</span><i></i><span>JointTrajectory</span></div>
+              <span class="path-hz mono">50 Hz</span>
+            </div>
+            <div class="path">
+              <span class="path-tag mono">DDS</span>
+              <div class="path-steps"><span>Raw-TTY keys</span><i></i><span>FK / IK</span><i></i><span>joint → motor map</span></div>
+              <span class="path-hz mono">100 Hz · sim</span>
+            </div>
+            <div class="path-sink">
+              <div class="sink-box mono">SIM · LowCmd over DDS<br /><small>q, Kp, Kd, τ · CRC → MuJoCo model</small></div>
+              <div class="sink-box sink-real mono">REAL · JSON over UART<br /><small>~20 Hz, feedback-gated → ESP32 → RoArm M3</small></div>
+            </div>
+          </div>
+
+          <p class="kicker mono chain-label">RoArm M3 real-hardware teleoperation · keyboard / Joy-Con</p>
+          <div class="flow flow-compact">
+            <div class="flow-node"><b>Joy-Con</b><span>BT + IMU</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node"><b>Windows</b><span>50 Hz TCP bridge</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node"><b>Linux ctrl</b><span>FK/IK · filters · safety</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node"><b>CP210x</b><span>USB → UART</span></div>
+            <div class="flow-link"></div>
+            <div class="flow-node flow-hot"><b>ESP32</b><span>servo bus</span></div>
+          </div>
+          <div class="chips chips-safety">
+            <span>joint limits</span><span>floor-clearance guard</span><span>IK-fail hold</span><span>stale-feedback reject</span><span>watchdog → active hold</span><span>gravity-load compensation</span>
+          </div>
+        </article>
+
+        <!-- 04 small cards -->
+        <div class="mini-grid mini-grid-2">
+          <article class="mini reveal glow-card" style="--c: var(--teal)">
+            <span class="case-num mono">04</span>
+            <h3>EMC mitigation playbook</h3>
+            <p>On a corner-radar module, harness-dependent common-mode emissions were brought down <b>two CISPR&nbsp;25 classes</b> with a high-current common-mode choke on the supply line. At IC level, a 2–3&nbsp;MHz conducted peak was suppressed with feedthrough and bulk decoupling capacitors. Each fix was verified by re-test.</p>
+            <div class="chips"><span>Filtering</span><span>Grounding</span><span>Shielding</span></div>
+          </article>
+          <article class="mini reveal glow-card" style="--c: var(--amber)">
+            <span class="case-num mono">05</span>
+            <h3>Digital systems on FPGA</h3>
+            <p>Verilog design, simulation in ModelSim, and synthesis in Quartus for the DE1-SoC in ECE241.</p>
+            <div class="chips"><span>Verilog</span><span>Quartus</span><span>ModelSim</span></div>
           </article>
         </div>
       </section>
 
-      <section class="skills" id="skills">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Skills</p>
-          <h2>Technical toolkit</h2>
+      <!-- SKILLS -->
+      <section class="section" id="skills">
+        <div class="section-head reveal">
+          <p class="kicker mono">04 / Toolkit</p>
+          <h2>What I work with</h2>
         </div>
-        <div class="skills-grid">
-          <article class="skill-panel" data-reveal>
-            <h3>Programming & Systems</h3>
-            <p>Verilog, Python, C/C++, MATLAB, LaTeX, Linux (Ubuntu), HTML, CSS, JavaScript</p>
-          </article>
-          <article class="skill-panel" data-reveal>
-            <h3>Robotics & ML</h3>
-            <p>PyTorch, LeRobot, ACT, reinforcement learning, imitation learning, OpenCV, Gymnasium, ROS 2, MoveIt 2, RViz, MuJoCo</p>
-          </article>
-          <article class="skill-panel" data-reveal>
-            <h3>Embedded & Edge AI</h3>
-            <p>ONNX, INT8 quantization, model conversion and deployment, embedded inference benchmarking, NXP i.MX 95, Kinara Ara-2/DVM, DDS, Unitree low-level control, Arduino</p>
-          </article>
-          <article class="skill-panel" data-reveal>
-            <h3>EDA & Engineering</h3>
-            <p>Altium Designer, LTspice, Multisim, Quartus, ModelSim, FPGA development, EMC32/EMSLAB</p>
-          </article>
-          <article class="skill-panel" data-reveal>
-            <h3>Hardware & Debugging</h3>
-            <p>Schematic capture, PCB layout and bring-up, soldering and hot-air rework, circuit testing, EMC debugging, frequency-domain measurement, register-level fault analysis</p>
-          </article>
-          <article class="skill-panel" data-reveal>
-            <h3>Lab & EMC Equipment</h3>
-            <p>Oscilloscope, DC power supply, multimeter, EMI receiver, spectrum analyzer, signal generator, RF power amplifier, power meter, LCR meter, RF probes, LISN, GTEM cell, source meter, transient-pulse generator, ESD gun, load-dump simulator</p>
-          </article>
+        <div class="skills">
+          <div class="skill reveal"><h3><i class="dot dot-amber"></i>EMC / EMI</h3><p>Radiated emissions (GTEM cell) · conducted emissions (150&nbsp;Ω direct coupling, voltage &amp; current probe) · Direct Power Injection · Bulk Current Injection (CBCI / DBCI) · ESD · ISO&nbsp;7637 transients · load dump · supply-voltage variation · spread-spectrum clocking analysis</p></div>
+          <div class="skill reveal"><h3><i class="dot dot-teal"></i>PCB &amp; Hardware Debug</h3><p>Altium Designer schematic &amp; PCB layout · board bring-up · soldering &amp; fine-pitch rework · decoupling networks · ferrite beads · common-mode chokes · grounding &amp; shielding · waveform &amp; register-level fault analysis</p></div>
+          <div class="skill reveal"><h3><i class="dot dot-blue"></i>Processors &amp; Interfaces</h3><p>NXP i.MX&nbsp;95 · Arm Cortex-A55 · Kinara Ara-2 NPU · ESP32 · Linux (udev, V4L2) · UART / LPUART · SPI · CAN · LIN · DDS</p></div>
+          <div class="skill reveal"><h3><i class="dot dot-violet"></i>Robotics &amp; ML</h3><p>ROS&nbsp;2 Humble · MoveIt&nbsp;2 · RViz · MuJoCo · FK / IK · PyTorch · LeRobot · ACT · ONNX · INT8 quantization · OpenCV</p></div>
+          <div class="skill reveal"><h3><i class="dot dot-teal"></i>Languages</h3><p>Verilog · Python · C / C++ · MATLAB · Simulink · LaTeX</p></div>
+          <div class="skill reveal"><h3><i class="dot dot-amber"></i>EDA &amp; Simulation</h3><p>Altium Designer · LTspice · Multisim · Quartus · ModelSim · DESim</p></div>
+          <div class="skill skill-wide reveal"><h3><i class="dot dot-blue"></i>Lab Equipment</h3><p>Oscilloscope · multimeter · EMI receiver · spectrum analyzer · vector network analyzer · signal generator · RF power amplifier · power meter · LCR meter · RF probes · LISN · GTEM cell · source meter · transient-pulse generator · ESD gun · load-dump simulator</p></div>
         </div>
       </section>
 
-      <section class="education section-band" id="education">
-        <div class="education-copy" data-reveal>
-          <p class="eyebrow">Education</p>
+      <!-- EDUCATION -->
+      <section class="section edu" id="education">
+        <div class="section-head reveal">
+          <p class="kicker mono">05 / Education</p>
           <h2>University of Toronto</h2>
-          <ul class="education-list">
-            <li>Bachelor of Applied Science in Electrical Engineering (2T9), Sep. 2025 - May 2030</li>
-            
-            <li>U of T Engineering International Scholar Award ($48,000)</li>
-          </ul>
         </div>
-
-        <div class="education-right">
-          <p class="section-kicker">Relevant Coursework (ECE & MAT)</p>
-          <div class="course-wall" aria-label="Courses" data-reveal>
-            <span>ECE110</span>
-            <span>ECE231</span>
-            <span>ECE241</span>
-            <span>ECE244</span>
-            <span>MAT186</span>
-            <span>MAT187</span>
-            <span>MAT188</span>
-            <span>MAT290</span>
-            <span>MAT291</span>
+        <div class="edu-grid">
+          <div class="edu-card reveal glow-card">
+            <p class="mono xp-date">Sep 2025 — May 2030</p>
+            <h3>BASc, Electrical Engineering</h3>
+            <p class="muted">2T9 + Professional Experience Year</p>
+            <ul class="honors">
+              <li><span>★</span>Dean's Honour List</li>
+              <li><span>★</span>U of T Engineering International Scholar Award, $48,000</li>
+            </ul>
+          </div>
+          <div class="courses reveal">
+            <p class="kicker mono">relevant coursework</p>
+            <div class="course-grid">
+              <div class="course"><b class="mono">ECE231</b><span>Introductory Electronics</span></div>
+              <div class="course"><b class="mono">ECE241</b><span>Digital Systems</span></div>
+              <div class="course"><b class="mono">ECE110</b><span>Electrical Fundamentals</span></div>
+              <div class="course"><b class="mono">ECE244</b><span>Programming Fundamentals</span></div>
+              <div class="course"><b class="mono">MAT290</b><span>Adv. Engineering Math</span></div>
+              <div class="course"><b class="mono">MAT291</b><span>Intro to Mathematical Physics</span></div>
+              <div class="course"><b class="mono">MAT188</b><span>Linear Algebra</span></div>
+              <div class="course"><b class="mono">MAT187</b><span>Calculus II</span></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="contact" id="contact" data-reveal>
-        <p class="eyebrow">Contact</p>
-        
-        <div class="contact-links">
-          <a href="mailto:tong.xue@mail.utoronto.ca">tong.xue@mail.utoronto.ca</a>
-          <a href="https://linkedin.com/in/tong-x" target="_blank" rel="noreferrer">LinkedIn</a>
+      <!-- CONTACT -->
+      <section class="contact" id="contact">
+        <div class="contact-inner reveal">
+          <p class="kicker mono">06 / Contact</p>
+          <h2>Get in <span class="grad">touch.</span></h2>
+          <div class="contact-row">
+            <button class="email-btn mono magnetic" data-email="tong.xue@mail.utoronto.ca">
+              <span class="email-text">tong.xue@mail.utoronto.ca</span><span class="email-hint">click to copy</span>
+            </button>
+          </div>
+          <div class="contact-links mono">
+            <a href="https://linkedin.com/in/tong-x" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>Tong Xue</span>
-      <span>Engineering Portfolio</span>
+    <footer class="footer mono">
+      <span>© 2026 Tong Xue</span>
+      <span>Toronto, ON</span>
+      <a href="#top">Back to top ↑</a>
     </footer>
 
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
